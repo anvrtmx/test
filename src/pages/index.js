@@ -1,9 +1,28 @@
 import React from "react";
 
-export default () =>
- <div style={{ color: `tomato` }}>
-   <h1>Hello Gatsby!</h1>
-   <h2>Anvar First Project</h2>
-   <p>What a world.</p>
-   <img src="https://source.unsplash.com/random/400x200" alt="" />
- </div>
+
+class Counter extends React.Component {
+  constructor() {
+    super()
+    this.state = { count: 0 }
+  }
+
+  render() {
+    return (
+      <div>
+        <h1>Counter</h1>
+        <p>current count: {this.state.count}</p>
+        <button onClick={() => this.setState({ count: this.state.count +
+          1 })}
+>plus
+        </button>
+        <button onClick={() => this.setState({ count: this.state.count -
+          1 })}
+>minus
+        </button>
+      </div>
+    )
+  }
+}
+
+export default Counter
